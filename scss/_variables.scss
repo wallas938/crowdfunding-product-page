@@ -1,4 +1,38 @@
+@import "colors";
+
 /* Layout */
 
 $mobile: 375px;
 $desktop: 1440px;
+
+/* Variables */
+
+/* Mixins */
+
+@mixin button($padding) {
+    border: none;
+    padding: 4.5vw;
+    color: white;
+    font-weight: 500;
+    font-size: 5vw;
+    border-radius: 40px;
+    letter-spacing: .5px;
+    background-color: $moderate-cyan;
+}
+
+@mixin card($width) {
+    width: $width;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 1px 1px whitesmoke;
+    margin-bottom: 8vw;
+}
+
+@mixin paragraph {
+    color: $dark-gray;
+    font-weight: 500;
+    font-size: 3.9vw;
+    line-height: 7vw;
+    font-weight: 500;
+}

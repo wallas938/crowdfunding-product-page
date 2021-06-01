@@ -1,6 +1,13 @@
 /* Fonts */
-/* Layout */
 /* Colors */
+/* Layout */
+/* Variables */
+/* Mixins */
+/* Colors */
+.load {
+  width: 79% !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -62,17 +69,26 @@ main {
           align-items: center;
 }
 
+/* Colors */
+/* Colors */
+/* Layout */
+/* Variables */
+/* Mixins */
 .mastercraft {
+  bottom: 8vh;
   position: relative;
-  width: 90%;
   padding-left: 5vw;
   padding-right: 5vw;
-  padding-top: 10vw;
+  padding-top: 13vw;
   padding-bottom: 10vw;
-  background-color: white;
   text-align: center;
-  border-radius: 5px;
-  border: 1px solid red;
+  width: 90%;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid white;
+  -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
+          box-shadow: 0px 0px 1px 1px whitesmoke;
+  margin-bottom: 8vw;
 }
 
 .mastercraft::before {
@@ -84,5 +100,218 @@ main {
 
 .mastercraft h1 {
   font-size: 5.9vw;
+  margin-bottom: 6vw;
+}
+
+.mastercraft p {
+  color: #7a7a7a;
+  font-weight: 500;
+  font-size: 3.9vw;
+  line-height: 7vw;
+  font-weight: 500;
+  margin-bottom: 8vw;
+}
+
+.mastercraft .cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mastercraft button:not(.bookmark) {
+  width: 78%;
+  border: none;
+  padding: 4.5vw;
+  color: white;
+  font-weight: 500;
+  font-size: 5vw;
+  border-radius: 40px;
+  letter-spacing: .5px;
+  background-color: #3cb4ac;
+}
+
+.mastercraft button.bookmark {
+  border: none;
+  border-radius: 100%;
+}
+
+/* Colors */
+/* Colors */
+/* Layout */
+/* Variables */
+/* Mixins */
+.stats {
+  width: 90%;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid white;
+  -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
+          box-shadow: 0px 0px 1px 1px whitesmoke;
+  margin-bottom: 8vw;
+  text-align: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+}
+
+.stats .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 5vw;
+}
+
+.stats .container:not(:last-child)::after {
+  width: 30%;
+  content: "";
+  margin: 0 auto;
+  border-bottom: 2px solid #7a7a7a;
+}
+
+.stats .container span:nth-child(1) {
+  font-size: 10vw;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 2.5vw;
+}
+
+.stats .container span:nth-child(2) {
+  color: #7a7a7a;
+  margin-bottom: 7vw;
+  font-weight: 500;
+}
+
+.stats .loading-bar {
+  width: 100%;
+  background-color: lightgrey;
+  height: 4vw;
+  border-radius: 40px;
+  position: relative;
+}
+
+.stats .loading-bar .filler {
+  width: 0%;
+  position: absolute;
+  left: 0;
+  background-color: #3cb4ac;
+  height: 4vw;
+  border-radius: 40px;
+  -webkit-transition: width 600ms ease-in;
+  transition: width 600ms ease-in;
+}
+
+.about {
+  width: 90%;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid white;
+  -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
+          box-shadow: 0px 0px 1px 1px whitesmoke;
+  margin-bottom: 8vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+}
+
+.about h2 {
+  font-size: 5.7vw;
+  margin-bottom: 8vw;
+}
+
+.about p {
+  color: #7a7a7a;
+  font-weight: 500;
+  font-size: 3.9vw;
+  line-height: 7vw;
+  font-weight: 500;
+}
+
+.about > p {
+  margin-bottom: 8vw;
+}
+
+.about .reward {
+  width: 90%;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid white;
+  -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
+          box-shadow: 0px 0px 1px 1px whitesmoke;
+  margin-bottom: 8vw;
+  border: 1px solid lightgray;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15vw;
+}
+
+.about .reward h3 {
+  margin-bottom: 1vw;
+  font-size: 4.5vw;
+}
+
+.about .reward > p {
+  margin-bottom: 8vw;
+}
+
+.about .reward .pledge {
+  font-weight: 500;
+  color: #3cb4ac;
+  font-size: 4.5vw;
+  margin-bottom: 5vw;
+}
+
+.about .reward .left {
+  font-size: 5vw;
+  margin-bottom: 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about .reward .left :first-child {
+  font-size: 10vw;
+  font-weight: 700;
+  color: black;
+  margin-right: 2vw;
+}
+
+.about .reward button {
+  border: none;
+  padding: 4.5vw;
+  color: white;
+  font-weight: 500;
+  font-size: 5vw;
+  border-radius: 40px;
+  letter-spacing: .5px;
+  background-color: #3cb4ac;
+  width: 80%;
+}
+
+.about .reward:last-child {
+  opacity: .4;
+  margin-bottom: 0;
+}
+
+.about .reward:last-child button {
+  background-color: #7a7a7a;
 }
 /*# sourceMappingURL=styles.css.map */

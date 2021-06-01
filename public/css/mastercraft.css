@@ -1,14 +1,20 @@
+/* Colors */
+/* Layout */
+/* CTAs shape */
 .mastercraft {
+  bottom: 8vh;
   position: relative;
-  width: 90%;
   padding-left: 5vw;
   padding-right: 5vw;
-  padding-top: 10vw;
+  padding-top: 13vw;
   padding-bottom: 10vw;
-  background-color: white;
   text-align: center;
+  width: 90%;
+  background-color: white;
   border-radius: 5px;
-  border: 1px solid red;
+  border: 1px solid white;
+  -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
+          box-shadow: 0px 0px 1px 1px whitesmoke;
 }
 
 .mastercraft::before {
@@ -20,5 +26,41 @@
 
 .mastercraft h1 {
   font-size: 5.9vw;
+  margin-bottom: 6vw;
+}
+
+.mastercraft p {
+  color: #7a7a7a;
+  font-weight: 500;
+  margin-bottom: 8vw;
+}
+
+.mastercraft .cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mastercraft button:not(.bookmark) {
+  width: 78%;
+  border: none;
+  padding: 5.2vw;
+  color: white;
+  font-weight: 500;
+  font-size: 5vw;
+  border-radius: 40px;
+  letter-spacing: .5px;
+  background-color: #3cb4ac;
+}
+
+.mastercraft button.bookmark {
+  border: none;
+  border-radius: 100%;
 }
 /*# sourceMappingURL=mastercraft.css.map */

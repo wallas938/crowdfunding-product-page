@@ -1,0 +1,56 @@
+@import "colors";
+@import "variables";
+
+.stats {
+    @include card(90%);
+    text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5vw;
+
+        &:not(:last-child)::after {
+            width: 30%;
+            content: "";
+            margin: 0 auto;
+            border-bottom: 2px solid $dark-gray;
+        }
+
+        span:nth-child(1) {
+            font-size: 10vw;
+            color: $black;
+            font-weight: 700;
+            margin-bottom: 2.5vw;
+        }
+
+        span:nth-child(2) {
+            color: $dark-gray;
+            margin-bottom: 7vw;
+            font-weight: 500;
+        }
+    }
+
+    .loading-bar {
+        width: 100%;
+        background-color: lightgrey;
+        height: 4vw;
+        border-radius: 40px;
+        position: relative;
+
+        .filler {
+            width: 0%;
+            position: absolute;
+            left: 0;
+            background-color: $moderate-cyan;
+            height: 4vw;
+            border-radius: 40px;
+            transition: width 600ms ease-in;
+        }
+
+    }
+}
