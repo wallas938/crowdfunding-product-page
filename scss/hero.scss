@@ -1,0 +1,13 @@
+.background-image {
+  padding: 3vw 7vw;
+  height: 40vh;
+  background-image: url(../images/image-hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+  header {
+      display: flex;
+      justify-content: space-between;
+  }
+}

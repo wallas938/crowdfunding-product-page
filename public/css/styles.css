@@ -30,4 +30,59 @@ textarea:focus,
 select:focus {
   outline: none;
 }
+
+.background-image {
+  padding: 3vw 7vw;
+  height: 40vh;
+  background-image: url(../images/image-hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.background-image header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mastercraft {
+  position: relative;
+  width: 90%;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid red;
+}
+
+.mastercraft::before {
+  content: url(../images/logo-mastercraft.svg);
+  position: absolute;
+  top: -7vw;
+  left: 38vw;
+}
+
+.mastercraft h1 {
+  font-size: 5.9vw;
+}
 /*# sourceMappingURL=styles.css.map */
