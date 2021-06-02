@@ -1,10 +1,4 @@
 
-  <!--   
-  For Desktop Menu
-  About
-  Discover
-  Get Started -->
-
   <!-- Selection modal start -->
 
  <!--  Back this project

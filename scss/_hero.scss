@@ -1,3 +1,6 @@
+@import "colors";
+@import "variables";
+
 .background-image {
   padding: 3vw 7vw;
   height: 40vh;
@@ -6,8 +9,48 @@
   background-size: cover;
   background-position: bottom;
 
-  header {
-      display: flex;
-      justify-content: space-between;
+  .header-mobile {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .background-image {
+    background-image: url(../images/image-hero-desktop.jpg);
+    height: 44.2vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+
+    .header-mobile {
+      display: none;
+    }
+
+    .header-desktop {
+      display: block;
+
+      nav {
+        color: white;
+        display: flex;
+        justify-content: space-between;
+
+        .logo,
+        li {
+          cursor: pointer;
+        }
+
+        ul {
+          width: 18vw;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
   }
 }

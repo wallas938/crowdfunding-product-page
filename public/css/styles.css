@@ -38,6 +38,11 @@ select:focus {
   outline: none;
 }
 
+/* Colors */
+/* Colors */
+/* Layout */
+/* Variables */
+/* Mixins */
 .background-image {
   padding: 3vw 7vw;
   height: 40vh;
@@ -47,13 +52,58 @@ select:focus {
   background-position: bottom;
 }
 
-.background-image header {
+.background-image .header-mobile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.background-image .header-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .background-image {
+    background-image: url(../images/image-hero-desktop.jpg);
+    height: 44.2vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+  }
+  .background-image .header-mobile {
+    display: none;
+  }
+  .background-image .header-desktop {
+    display: block;
+  }
+  .background-image .header-desktop nav {
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .background-image .header-desktop nav .logo,
+  .background-image .header-desktop nav li {
+    cursor: pointer;
+  }
+  .background-image .header-desktop nav ul {
+    width: 18vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 main {
@@ -67,6 +117,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: whitesmoke;
 }
 
 /* Colors */
@@ -75,13 +126,6 @@ main {
 /* Variables */
 /* Mixins */
 .mastercraft {
-  bottom: 8vh;
-  position: relative;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 13vw;
-  padding-bottom: 10vw;
-  text-align: center;
   width: 90%;
   background-color: white;
   border-radius: 8px;
@@ -89,6 +133,17 @@ main {
   -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
           box-shadow: 0px 0px 1px 1px whitesmoke;
   margin-bottom: 8vw;
+  bottom: 8vh;
+  position: relative;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 13vw;
+  padding-bottom: 10vw;
+  text-align: center;
+}
+
+.mastercraft button.bookmark-desktop {
+  display: none;
 }
 
 .mastercraft::before {
@@ -124,10 +179,10 @@ main {
           align-items: center;
 }
 
-.mastercraft button:not(.bookmark) {
+.mastercraft button:not(.bookmark-mobile) {
   width: 78%;
   border: none;
-  padding: 4.5vw;
+  padding: 5.2vw;
   color: white;
   font-weight: 500;
   font-size: 5vw;
@@ -136,9 +191,66 @@ main {
   background-color: #3cb4ac;
 }
 
-.mastercraft button.bookmark {
+.mastercraft button.bookmark-mobile {
   border: none;
   border-radius: 100%;
+}
+
+@media screen and (min-width: 1440px) {
+  .mastercraft {
+    bottom: 15vh;
+    width: 55%;
+    position: relative;
+    text-align: center;
+    padding: 3.5vw;
+    margin-bottom: 2vw;
+  }
+  .mastercraft button.bookmark-mobile {
+    display: none;
+  }
+  .mastercraft::before {
+    content: url(../images/logo-mastercraft.svg);
+    position: absolute;
+    top: -2vw;
+    left: 25.5vw;
+  }
+  .mastercraft h1 {
+    font-size: 2.3vw;
+    margin-bottom: 1vw;
+  }
+  .mastercraft p {
+    font-size: 1.2vw;
+    line-height: unset;
+    margin-bottom: 3vw;
+  }
+  .mastercraft button:not(.bookmark-desktop) {
+    border: none;
+    padding: 1.4vw;
+    color: white;
+    font-weight: 500;
+    font-size: 5vw;
+    border-radius: 40px;
+    letter-spacing: .5px;
+    background-color: #3cb4ac;
+    font-size: 1.1vw;
+    width: 31%;
+  }
+  .mastercraft .bookmark-desktop {
+    position: relative;
+    display: block !important;
+    padding: 1.3vw 1.3vw 1.3vw 4.8vw !important;
+    font-size: 1.1vw !important;
+    font-weight: 700 !important;
+    width: 27% !important;
+    color: #7a7a7a !important;
+    background-color: whitesmoke !important;
+  }
+  .mastercraft .bookmark-desktop::before {
+    content: url(../images/icon-bookmark.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 /* Colors */
@@ -211,6 +323,64 @@ main {
   transition: width 600ms ease-in;
 }
 
+@media screen and (min-width: 1440px) {
+  .stats {
+    width: 55%;
+    text-align: left;
+    position: relative;
+    bottom: 9vw;
+    padding: 3.5vw;
+  }
+  .stats .containers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .stats .containers .container {
+    width: 27%;
+    margin-right: 3vw;
+    margin-bottom: 2.5vw;
+  }
+  .stats .containers .container::after {
+    display: none;
+  }
+  .stats .containers .container span:nth-child(1) {
+    font-size: 2.2vw;
+    color: black;
+    margin-bottom: .5vw;
+    font-weight: 700;
+  }
+  .stats .containers .container span:nth-child(2) {
+    color: #7a7a7a;
+    margin-bottom: unset;
+    font-weight: 500;
+  }
+  .stats .containers .container:not(:last-child) {
+    border-right: 2px solid whitesmoke;
+  }
+  .stats .loading-bar {
+    width: 100%;
+    background-color: lightgrey;
+    height: 1.1vw;
+    border-radius: 40px;
+    position: relative;
+  }
+  .stats .loading-bar .filler {
+    width: 0%;
+    position: absolute;
+    left: 0;
+    background-color: #3cb4ac;
+    height: 1.1vw;
+    border-radius: 40px;
+    -webkit-transition: width 600ms ease-in;
+    transition: width 600ms ease-in;
+  }
+}
+
 .about {
   width: 90%;
   background-color: white;
@@ -255,8 +425,6 @@ main {
   padding-right: 5vw;
   padding-top: 10vw;
   padding-bottom: 10vw;
-  margin-right: auto;
-  margin-left: auto;
   margin-bottom: 15vw;
 }
 
@@ -296,14 +464,16 @@ main {
 
 .about .reward button {
   border: none;
-  padding: 4.5vw;
+  padding: 5vw;
   color: white;
   font-weight: 500;
   font-size: 5vw;
   border-radius: 40px;
   letter-spacing: .5px;
   background-color: #3cb4ac;
-  width: 80%;
+  width: 66%;
+  font-size: 3.5vw;
+  font-weight: 700;
 }
 
 .about .reward:last-child {
@@ -313,5 +483,83 @@ main {
 
 .about .reward:last-child button {
   background-color: #7a7a7a;
+}
+
+@media screen and (min-width: 1440px) {
+  .about {
+    width: 55%;
+    text-align: left;
+    position: relative;
+    bottom: 14vw;
+    padding: 3.5vw;
+    margin-bottom: 1vw;
+  }
+  .about h2 {
+    font-size: 1.6vw;
+    margin-bottom: 2vw;
+  }
+  .about p {
+    font-size: 1.2vw;
+    line-height: 1.9vw;
+    margin-bottom: 2vw;
+  }
+  .about .reward {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid white;
+    -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
+            box-shadow: 0px 0px 1px 1px whitesmoke;
+    margin-bottom: 8vw;
+    border: 2px solid whitesmoke !important;
+    padding: 2vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1.5vw;
+  }
+  .about .reward div:first-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .about .reward > p {
+    margin-bottom: 2vw;
+  }
+  .about .reward h3,
+  .about .reward .pledge {
+    margin-bottom: 1.2vw;
+  }
+  .about .reward h3 {
+    font-size: 1.3vw;
+  }
+  .about .reward .pledge {
+    font-size: 1vw;
+  }
+  .about .reward div:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .about .reward div:last-child .left {
+    font-size: 1.2vw;
+    margin-bottom: 1vw;
+  }
+  .about .reward div:last-child .left :first-child {
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: black;
+    margin-right: .5vw;
+  }
+  .about .reward div:last-child button {
+    padding: 1.2vw;
+    font-size: 1vw;
+    width: 29%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

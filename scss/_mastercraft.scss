@@ -2,6 +2,7 @@
 @import "variables";
 
 .mastercraft {
+  @include card(90%);
   bottom: 8vh;
   position: relative;
   padding-left: 5vw;
@@ -9,8 +10,10 @@
   padding-top: 13vw;
   padding-bottom: 10vw;
   text-align: center;
-  
-  @include card(90%);
+
+  button.bookmark-desktop {
+    display: none;
+  }
 
   &::before {
     content: url(../images/logo-mastercraft.svg);
@@ -35,14 +38,73 @@
     align-items: center;
   }
 
-  button:not(.bookmark) {
+  button:not(.bookmark-mobile) {
     width: 78%;
     @include button(5.2vw)
   }
 
-  button.bookmark {
+  button.bookmark-mobile {
     border: none;
     border-radius: 100%;
   }
 
+}
+
+@media screen and (min-width: $desktop) {
+
+  .mastercraft {
+    bottom: 15vh;
+    width: 55%;
+    position: relative;
+    text-align: center;
+    padding: 3.5vw;
+    margin-bottom: 2vw;
+
+    button.bookmark-mobile {
+      display: none;
+    }
+
+    &::before {
+      content: url(../images/logo-mastercraft.svg);
+      position: absolute;
+      top: -2vw;
+      left: 25.5vw;
+    }
+
+    h1 {
+      font-size: 2.3vw;
+      margin-bottom: 1vw;
+    }
+
+    p {
+      font-size: 1.2vw;
+      line-height: unset;
+      margin-bottom: 3vw;
+    }
+
+    button:not(.bookmark-desktop) {
+      @include button(1.4vw);
+      font-size: 1.1vw;
+      width: 31%;
+    }
+
+    .bookmark-desktop {
+      position: relative;
+      display: block !important;
+      padding: 1.3vw 1.3vw 1.3vw 4.8vw !important;
+      font-size: 1.1vw !important;
+      font-weight: 700 !important;
+      width: 27% !important;
+      color: $dark-gray !important;
+      background-color: whitesmoke !important;
+
+      &::before {
+        content: url(../images/icon-bookmark.svg);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+  }
 }

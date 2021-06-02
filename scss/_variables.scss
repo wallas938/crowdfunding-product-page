@@ -11,7 +11,7 @@ $desktop: 1440px;
 
 @mixin button($padding) {
     border: none;
-    padding: 4.5vw;
+    padding: $padding;
     color: white;
     font-weight: 500;
     font-size: 5vw;
