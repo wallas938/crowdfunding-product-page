@@ -1,4 +1,5 @@
 /* Fonts */
+/* Typo */
 /* Colors */
 /* Layout */
 /* Variables */
@@ -8,11 +9,52 @@
   width: 79% !important;
 }
 
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.show-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.backdrop-layer {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.card-selected-border-class {
+  border: 1px solid #3cb4ac !important;
+}
+
+.pledge-selected::before {
+  content: "";
+  display: unset;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #3cb4ac;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-47%) translateX(-52%);
+          transform: translateY(-47%) translateX(-52%);
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+img {
+  width: 100%;
 }
 
 html {
@@ -22,6 +64,7 @@ html {
 body {
   font-size: 16px;
   font-family: "Commissioner", sans-serif;
+  position: relative;
 }
 
 li {
@@ -32,10 +75,626 @@ a {
   text-decoration: none;
 }
 
+input[type="radio"] {
+  visibility: hidden;
+  position: absolute;
+}
+
+input[type="button"],
+input[type="submit"],
+button {
+  cursor: pointer;
+}
+
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
+}
+
+/* Colors */
+/* Colors */
+/* Layout */
+/* Variables */
+/* Mixins */
+.background-modal {
+  z-index: 99;
+  display: none;
+  overflow: auto;
+  position: fixed;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 24vw 0;
+}
+
+.mobile-nav-modal {
+  position: fixed;
+  display: none;
+  height: 32%;
+  width: 90%;
+  background-color: whitesmoke;
+  border: 1px solid white;
+  border-radius: 10px;
+  z-index: 100;
+  top: 15vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.mobile-nav-modal li {
+  font-size: 5vw;
+  font-weight: 600;
+  padding: 6vw;
+}
+
+.mobile-nav-modal li:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
+
+.backing-project-modal {
+  width: 90%;
+  display: none;
+  background-color: whitesmoke;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 6.5vw;
+}
+
+.backing-project-modal .backing-project-modal__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 6vw;
+}
+
+.backing-project-modal .backing-project-modal__header h2 {
+  font-size: 5.2vw;
+  padding: auto;
+}
+
+.backing-project-modal .backing-project-modal__header img {
+  width: 4vw;
+  height: 4vw;
+  cursor: pointer;
+}
+
+.backing-project-modal p {
+  font-size: 3.5vw;
+  margin-bottom: 6vw;
+  line-height: 6.2vw;
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.backing-project-modal .backing-project-modal__body .left-mobile {
+  display: unset;
+  color: #7a7a7a;
+}
+
+.backing-project-modal .backing-project-modal__body .left-desktop {
+  display: none;
+}
+
+.backing-project-modal .backing-project-modal__body .card {
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+
+.backing-project-modal .backing-project-modal__body .card .radio {
+  position: absolute;
+  border: 1px solid lightgray;
+  width: 23px;
+  height: 23px;
+  border-radius: 100%;
+}
+
+.backing-project-modal .backing-project-modal__body .card:not(:last-child) {
+  margin-bottom: 6vw;
+}
+
+.backing-project-modal .backing-project-modal__body .no-reward {
+  padding-top: 5vw;
+  position: relative;
+}
+
+.backing-project-modal .backing-project-modal__body .no-reward__header {
+  margin-bottom: 9vw;
+  padding-left: 5vw;
+}
+
+.backing-project-modal .backing-project-modal__body .no-reward__header input {
+  margin-right: 2.5vw;
+  visibility: hidden;
+}
+
+.backing-project-modal .backing-project-modal__body .no-reward__header label {
+  font-size: 3.5vw;
+  font-weight: 700;
+  position: relative;
+  margin-left: 11vw;
+  margin-bottom: 5vw;
+}
+
+.backing-project-modal .backing-project-modal__body .no-reward__body {
+  padding-right: 14vw;
+  padding-left: 5vw;
+}
+
+.backing-project-modal .backing-project-modal__body .no-reward > .card__footer {
+  display: none;
+  border-top: 1px solid lightgray;
+  height: 25vw;
+}
+
+.backing-project-modal .backing-project-modal__body .no-reward > .card__footer p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.backing-project-modal .backing-project-modal__body .no-reward > .card__footer .card__footer__cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.backing-project-modal .backing-project-modal__body .no-reward > .card__footer .card__footer__cta input[type="button"] {
+  border-radius: 30px;
+  border: 1px solid transparent;
+  background-color: #3cb4ac;
+  color: white;
+  font-weight: 600;
+  width: 43%;
+  height: 12vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card {
+  position: relative;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card .radio {
+  position: absolute;
+  border: 1px solid lightgray;
+  width: 23px;
+  height: 23px;
+  border-radius: 100%;
+  top: 7.5vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 6vw;
+  padding-top: 5vw;
+  padding-left: 5vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__header > div {
+  margin-left: 11vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__header div > span {
+  display: block;
+  font-size: 3.5vw;
+  font-weight: 700;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__header div > span:first-child {
+  margin-bottom: 2vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__header div > span:last-child {
+  color: #3cb4ac;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__body {
+  padding-left: 5vw;
+  margin-bottom: 7vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__body p {
+  padding-right: 9vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__body .left-mobile > span:first-child {
+  font-size: 4.5vw;
+  font-weight: 700;
+  color: black;
+  margin-right: 1.5vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__footer {
+  display: none;
+  border-top: 1px solid lightgray;
+  padding-top: 6vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__footer p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5vw 2vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta label {
+  width: 36%;
+  position: relative;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta label::before {
+  content: "$";
+  position: absolute;
+  top: 3.72vw;
+  left: 7.5vw;
+  font-size: 3.5vw;
+  font-weight: 700;
+  color: #7a7a7a;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta input[type="text"] {
+  border-radius: 30px;
+  border: 1px solid lightgray;
+  width: 100%;
+  height: 12vw;
+  padding-left: 11vw;
+  font-weight: 700;
+  font-size: 3.3vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta input[type="button"] {
+  border-radius: 30px;
+  border: 1px solid transparent;
+  background-color: #3cb4ac;
+  color: white;
+  font-weight: 600;
+  width: 43%;
+  height: 12vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card:last-child {
+  opacity: 0.4;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card.black-edition > .card__body p {
+  padding-right: 13vw;
+}
+
+.backing-project-modal .backing-project-modal__body .pledge-card.special-edition > .card__body p {
+  padding-right: 12vw;
+}
+
+.thanks-modal {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  background-color: #fff;
+  text-align: center;
+  padding: 9vw 7vw 10vw 7vw;
+  border-radius: 8px;
+  top: 30vw;
+  width: 90%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.thanks-modal .check {
+  margin: 0 auto 7vw auto;
+  width: 26%;
+}
+
+.thanks-modal h1 {
+  font-size: 5.3vw;
+  margin-bottom: 7vw;
+}
+
+.thanks-modal p {
+  font-size: 4vw;
+  color: #7a7a7a;
+  font-weight: 500;
+  line-height: 6.5vw;
+  margin-bottom: 9vw;
+}
+
+.thanks-modal button {
+  width: 40%;
+  height: 14vw;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  background-color: #3cb4ac;
+}
+
+@media screen and (min-width: 1440px) {
+  .thanks-modal {
+    padding: 3vw 2.9vw;
+    border: 3px solid lightgrey;
+    top: 29vw;
+    width: 41%;
+  }
+  .thanks-modal .check {
+    margin: 0 auto 3vw auto;
+    width: 19%;
+  }
+  .thanks-modal h1 {
+    font-size: 1.8vw;
+    margin-bottom: 1.5vw;
+  }
+  .thanks-modal p {
+    font-size: 1.2vw;
+    line-height: 2.5vw;
+    margin-bottom: 2vw;
+  }
+  .thanks-modal button {
+    width: 23%;
+    height: 4vw;
+  }
+  .backing-project-modal {
+    width: 55%;
+    border: 3px solid red;
+    top: 13vw;
+    padding: 3vw;
+  }
+  .backing-project-modal .backing-project-modal__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: unset;
+  }
+  .backing-project-modal .backing-project-modal__header h2 {
+    font-size: 2vw;
+  }
+  .backing-project-modal .backing-project-modal__header img {
+    position: relative;
+    bottom: 1.3vw;
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  .backing-project-modal p {
+    font-size: 1.2vw;
+    margin-bottom: unset;
+  }
+  .backing-project-modal .backing-project-modal__body .left-mobile {
+    display: none;
+  }
+  .backing-project-modal .backing-project-modal__body .left-desktop {
+    display: unset;
+  }
+  .backing-project-modal .backing-project-modal__body .card {
+    border: 3px solid lightgray;
+  }
+  .backing-project-modal .backing-project-modal__body .card .radio {
+    position: absolute;
+    border: 1px solid lightgray;
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    left: 2vw;
+    top: 2.2vw;
+  }
+  .backing-project-modal .backing-project-modal__body .card .radio::before {
+    width: 1vw;
+    height: 1vw;
+  }
+  .backing-project-modal .backing-project-modal__body .no-reward {
+    padding-top: 2vw;
+    position: relative;
+  }
+  .backing-project-modal .backing-project-modal__body .no-reward__header {
+    margin-bottom: 1.3vw;
+  }
+  .backing-project-modal .backing-project-modal__body .no-reward__header input {
+    margin-right: 2.5vw;
+  }
+  .backing-project-modal .backing-project-modal__body .no-reward__header label {
+    font-size: 1.3vw;
+    font-weight: 700;
+    position: relative;
+    margin-left: unset;
+    margin-bottom: unset;
+  }
+  .backing-project-modal .backing-project-modal__body .no-reward__body {
+    padding-right: 1vw;
+    line-height: 2vw;
+    padding-bottom: 2vw;
+  }
+  .backing-project-modal .backing-project-modal__body .no-reward > .card__footer {
+    display: none;
+    border-top: 1px solid lightgray;
+    height: 7vw;
+    padding-right: 1vw;
+  }
+  .backing-project-modal .backing-project-modal__body .no-reward > .card__footer p {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .backing-project-modal .backing-project-modal__body .no-reward > .card__footer .card__footer__cta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .backing-project-modal .backing-project-modal__body .no-reward > .card__footer .card__footer__cta input[type="button"] {
+    border: 2px solid lightgray;
+    margin-left: 2vw;
+    width: 9vw;
+    height: 4vw;
+    font-weight: 600;
+  }
+  .backing-project-modal .backing-project-modal__body .card:not(:last-child) {
+    margin-bottom: 6vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card {
+    position: relative;
+    padding-top: 2vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card .radio {
+    position: absolute;
+    border: 1px solid lightgray;
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: unset;
+    padding-right: 1.5vw;
+    padding-top: unset;
+    padding-left: 5.5vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__header > div {
+    padding-left: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__header div > span {
+    font-size: 1.3vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__header div > span:first-child {
+    margin-bottom: 2vw;
+    margin-right: 1.3vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__header div > span:last-child {
+    color: #3cb4ac;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__header .left-desktop span:first-child {
+    margin-right: .8vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__body {
+    padding-left: 5.5vw;
+    margin-bottom: unset;
+    padding-right: 1vw;
+    padding-bottom: 2.5vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__body p {
+    padding-right: .5vw;
+    line-height: 2vw;
+    font-size: 1.15vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer {
+    display: none;
+    padding-left: 2vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 1vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    border-top: 2px solid lightgray;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer p {
+    text-align: left;
+    margin-bottom: unset;
+    line-height: unset;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: unset;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta label {
+    position: relative;
+    width: 8vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta label::before {
+    content: "$";
+    position: absolute;
+    top: 1.1vw;
+    left: 2vw;
+    font-size: 1.3vw;
+    font-weight: 700;
+    color: #7a7a7a;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta input[type="text"] {
+    border: 2px solid lightgray;
+    width: 100%;
+    height: 4vw;
+    padding-left: 3vw;
+    font-weight: 700;
+    font-size: 1.3vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta input[type="button"] {
+    border: 2px solid lightgray;
+    margin-left: 2vw;
+    width: 9vw;
+    height: 4vw;
+    font-weight: 600;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card:last-child {
+    opacity: 0.4;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card.black-edition > .card__body p {
+    padding-right: 13vw;
+  }
+  .backing-project-modal .backing-project-modal__body .pledge-card.special-edition > .card__body p {
+    padding-right: 12vw;
+  }
 }
 
 /* Colors */
@@ -59,6 +718,11 @@ select:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.background-image .header-mobile button {
+  background: black;
+  border: none;
 }
 
 .background-image .header-desktop {
@@ -178,6 +842,10 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.mastercraft .cta button {
+  cursor: pointer;
 }
 
 .mastercraft button:not(.bookmark-mobile) {

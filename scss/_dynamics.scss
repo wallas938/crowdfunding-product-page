@@ -2,3 +2,39 @@
 .load {
     width: 79% !important;
 }
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.show-flex {
+    display: flex !important;
+}
+
+.backdrop-layer {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.card-selected-border-class {
+    border: 1px solid $moderate-cyan !important;
+}
+
+.pledge-selected {
+    &::before {
+        content: "";
+        display: unset;
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+        background-color: $moderate-cyan;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-47%) translateX(-52%);
+    }
+}

@@ -6,15 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
   <!-- <base href="http://127.0.0.1:5500/public/"> --> <!-- FOR DEV MODE -->
-   <base href="https://wallas938.github.io/crowdfunding-product-page/public/"> <!-- FOR PROD MODE -->
+  <base href="https://wallas938.github.io/crowdfunding-product-page/public/">
+  <!-- FOR PROD MODE -->
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
   <!-- Fonts -->
 
+  <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-
+  <!-- Styles -->
+  <script src="scripts/modal.js" defer></script>
   <title>Frontend Mentor | Crowdfunding product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -31,14 +34,175 @@
 </head>
 
 <body>
+
+  <!-- Modals -->
+  <div class="background-modal">
+
+    <nav class="mobile-nav-modal">
+      <ul>
+        <li>About</li>
+        <li>Discover</li>
+        <li>Get Started</li>
+      </ul>
+    </nav>
+
+    <div class="backing-project-modal">
+      <div class="backing-project-modal__header">
+        <h2>Back this project</h2>
+        <img class="close-back-project-btn" src="images/icon-close-modal.svg" alt="icon close modal">
+      </div>
+      <p> Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+      </p>
+      <div class="backing-project-modal__body">
+        <div class="card no-reward">
+          <div class="no-reward__header">
+            <span class="radio"></span>
+            <input type="radio" name="no-reward" id="no-reward">
+            <label for="no-reward">
+              Pledge with no reward
+            </label>
+          </div>
+          <p class="no-reward__body">
+            Choose to support us without a reward if you simply believe in our project. As a backer,
+            you will be signed up to receive product updates via email.
+          </p>
+          <div class="card__footer">
+            <div class="card__footer__cta">
+              <input class="validation" type="button" value="Continue">
+            </div>
+          </div>
+        </div>
+        <div class="card pledge-card bamboo">
+          <div class="card__header">
+            <span class="radio"></span>
+            <input type="radio" name="bamboo" id="bamboo">
+            <div>
+              <span>
+                Bamboo Stand
+              </span>
+              <span>
+                Pledge $25 or more
+              </span>
+            </div>
+            <div class="left-desktop">
+              <span>101</span>
+              <span>left</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <p>
+              You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
+              you’ll be added to a special Backer member list.
+            </p>
+            <div class="left-mobile">
+              <span>101</span>
+              <span>left</span>
+            </div>
+          </div>
+          <div class="card__footer">
+            <p>Enter your pledge</p>
+            <div class="card__footer__cta">
+              <label for="money">
+                <input type="text" name="money" value="25" id="money">
+              </label>
+              <input class="validation" type="button" value="Continue">
+            </div>
+          </div>
+        </div>
+        <div class="card pledge-card black-edition">
+          <div class="card__header">
+            <span class="radio"></span>
+            <input type="radio" name="black-edition" id="black-edition">
+            <div>
+              <span>
+                Black Edition Stand
+              </span>
+              <span>
+                Pledge $75 or more
+              </span>
+            </div>
+            <div class="left-desktop hide">
+              <span>101</span>
+              <span>left</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <p>
+              You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
+              member list. Shipping is included.
+            </p>
+            <div class="left-mobile">
+              <span>64</span>
+              <span>left</span>
+            </div>
+          </div>
+          <div class="card__footer">
+            <p>Enter your pledge</p>
+            <div class="card__footer__cta">
+              <label for="money">
+                <input type="text" name="money" value="25" id="money">
+              </label>
+              <input class="validation" type="button" value="Continue">
+            </div>
+          </div>
+        </div>
+        <div class="card pledge-card special-edition">
+          <div class="card__header">
+            <span class="radio"></span>
+            <input type="radio" name="bamboo" id="bamboo">
+            <div>
+              <span>
+                Mahogany Special Edition
+              </span>
+              <span>
+                Pledge $200 or more
+              </span>
+            </div>
+            <div class="left-desktop hide">
+              <span>0</span>
+              <span>left</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <p>
+              You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
+              to our Backer member list. Shipping is included.
+            </p>
+            <div class="left-mobile">
+              <span>0</span>
+              <span>left</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thanks-modal">
+      <div class="check">
+        <img src="images/icon-check.svg" alt="check icon">
+      </div>
+      <h1>Thanks for your support!</h1>
+      <p>
+        Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+        an email once our campaign is completed.
+      </p>
+      <div>
+        <button>Got it!</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modals -->
+
   <div class="background-image">
     <header class="header-mobile">
       <div class="logo">
         <img src="images/logo.svg" alt="">
       </div>
-      <buttton class="humberger">
+      <button class="hamburger-btn">
         <img src="images/icon-hamburger.svg" alt="">
-      </buttton>
+      </button>
     </header>
     <header class="header-desktop">
       <nav>
@@ -58,12 +222,12 @@
       <h1>Mastercraft Bamboo Monitor Riser</h1>
       <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
       <div class="cta">
-        <button>Back this project</button>
+        <button class="cta__back-this-project">Back this project</button>
         <button class="bookmark-mobile">
           <img src="images/icon-bookmark.svg" alt="">
         </button>
         <button class="bookmark-desktop">
-        Bookmark
+          Bookmark
         </button>
       </div>
     </section>
@@ -83,7 +247,7 @@
         </div>
       </div>
       <div class="loading-bar">
-        <span class="filler load"></span>
+        <span class="filler"></span>
       </div>
     </section>
     <section class="about">
@@ -106,7 +270,7 @@
           you’ll be added to a special Backer member list.</p>
         <div>
           <p class="left"><span>101</span> left</p>
-          <button>Select Reward</button>
+          <button id="bamboo-stand" class="select-reward-btn">Select Reward</button>
         </div>
       </div>
       <div class="reward">
@@ -119,7 +283,7 @@
         </p>
         <div>
           <p class="left"><span>64</span> left</p>
-          <button>Select Reward</button>
+          <button id="black-edition" class="select-reward-btn">Select Reward</button>
         </div>
       </div>
       <div class="reward">
@@ -136,7 +300,6 @@
       </div>
     </section>
   </main>
-
 </body>
 
 </html>
