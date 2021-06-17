@@ -50,6 +50,18 @@
   color: #147b74 !important;
 }
 
+@media screen and (max-width: 1440px) {
+  .show-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
