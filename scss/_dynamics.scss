@@ -21,7 +21,7 @@
 }
 
 .card-selected-border-class {
-    border: 1px solid $moderate-cyan !important;
+    border: 2px solid $moderate-cyan !important;
 }
 
 .pledge-selected {
@@ -36,5 +36,11 @@
         left: 50%;
         top: 50%;
         transform: translateY(-47%) translateX(-52%);
+    }
+}
+
+.bookmarked-class {
+    span {
+        color: $dark-cyan !important;
     }
 }

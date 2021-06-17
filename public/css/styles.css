@@ -29,7 +29,7 @@
 }
 
 .card-selected-border-class {
-  border: 1px solid #3cb4ac !important;
+  border: 2px solid #3cb4ac !important;
 }
 
 .pledge-selected::before {
@@ -44,6 +44,10 @@
   top: 50%;
   -webkit-transform: translateY(-47%) translateX(-52%);
           transform: translateY(-47%) translateX(-52%);
+}
+
+.bookmarked-class span {
+  color: #147b74 !important;
 }
 
 * {
@@ -84,6 +88,7 @@ input[type="button"],
 input[type="submit"],
 button {
   cursor: pointer;
+  color: #FFF;
 }
 
 input:focus,
@@ -117,7 +122,6 @@ select:focus {
 .mobile-nav-modal {
   position: fixed;
   display: none;
-  height: 32%;
   width: 90%;
   background-color: whitesmoke;
   border: 1px solid white;
@@ -200,6 +204,7 @@ select:focus {
   width: 23px;
   height: 23px;
   border-radius: 100%;
+  cursor: pointer;
 }
 
 .backing-project-modal .backing-project-modal__body .card:not(:last-child) {
@@ -227,6 +232,7 @@ select:focus {
   position: relative;
   margin-left: 11vw;
   margin-bottom: 5vw;
+  cursor: pointer;
 }
 
 .backing-project-modal .backing-project-modal__body .no-reward__body {
@@ -278,6 +284,7 @@ select:focus {
   width: 23px;
   height: 23px;
   border-radius: 100%;
+  cursor: pointer;
   top: 7.5vw;
 }
 
@@ -383,6 +390,10 @@ select:focus {
   height: 12vw;
 }
 
+.backing-project-modal .backing-project-modal__body .pledge-card > .card__footer .card__footer__cta input[type="button"]:hover {
+  background-color: #147b74;
+}
+
 .backing-project-modal .backing-project-modal__body .pledge-card:last-child {
   opacity: 0.4;
 }
@@ -438,11 +449,29 @@ select:focus {
 }
 
 @media screen and (min-width: 1440px) {
+  .background-modal {
+    z-index: 99;
+    display: none;
+    overflow: auto;
+    position: fixed;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 12vw 0;
+  }
   .thanks-modal {
     padding: 3vw 2.9vw;
     border: 3px solid lightgrey;
-    top: 29vw;
+    top: 25%;
     width: 41%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   .thanks-modal .check {
     margin: 0 auto 3vw auto;
@@ -463,7 +492,7 @@ select:focus {
   }
   .backing-project-modal {
     width: 55%;
-    border: 3px solid red;
+    border: 3px solid white;
     top: 13vw;
     padding: 3vw;
   }
@@ -507,6 +536,7 @@ select:focus {
     width: 23px;
     height: 23px;
     border-radius: 100%;
+    cursor: pointer;
     width: 2vw;
     height: 2vw;
     left: 2vw;
@@ -579,6 +609,7 @@ select:focus {
     width: 23px;
     height: 23px;
     border-radius: 100%;
+    cursor: pointer;
   }
   .backing-project-modal .backing-project-modal__body .pledge-card > .card__header {
     display: -webkit-box;
@@ -597,6 +628,7 @@ select:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-left: unset;
   }
   .backing-project-modal .backing-project-modal__body .pledge-card > .card__header div > span {
     font-size: 1.3vw;
@@ -625,9 +657,6 @@ select:focus {
   .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer {
     display: none;
     padding-left: 2vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     padding-right: 1vw;
     padding-top: 1.5vw;
     padding-bottom: 1.5vw;
@@ -703,8 +732,8 @@ select:focus {
 /* Variables */
 /* Mixins */
 .background-image {
-  padding: 3vw 7vw;
-  height: 40vh;
+  padding: clamp(0.7rem, 3vw, 1.8rem) clamp(1.64rem, 7vw, 2.52rem);
+  height: clamp(16.683rem, 40vh, 22.5rem);
   background-image: url(../images/image-hero-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -721,7 +750,7 @@ select:focus {
 }
 
 .background-image .header-mobile button {
-  background: black;
+  background: transparent;
   border: none;
 }
 
@@ -852,12 +881,15 @@ main {
   width: 78%;
   border: none;
   padding: 5.2vw;
-  color: white;
   font-weight: 500;
   font-size: 5vw;
   border-radius: 40px;
   letter-spacing: .5px;
   background-color: #3cb4ac;
+}
+
+.mastercraft button:not(.bookmark-mobile):hover {
+  background-color: #147b74;
 }
 
 .mastercraft button.bookmark-mobile {
@@ -895,7 +927,6 @@ main {
   .mastercraft button:not(.bookmark-desktop) {
     border: none;
     padding: 1.4vw;
-    color: white;
     font-weight: 500;
     font-size: 5vw;
     border-radius: 40px;
@@ -904,6 +935,9 @@ main {
     font-size: 1.1vw;
     width: 31%;
   }
+  .mastercraft button:not(.bookmark-desktop):hover {
+    background-color: #147b74;
+  }
   .mastercraft .bookmark-desktop {
     position: relative;
     display: block !important;
@@ -911,14 +945,17 @@ main {
     font-size: 1.1vw !important;
     font-weight: 700 !important;
     width: 27% !important;
-    color: #7a7a7a !important;
+    color: black;
     background-color: whitesmoke !important;
   }
-  .mastercraft .bookmark-desktop::before {
-    content: url(../images/icon-bookmark.svg);
-    position: absolute;
+  .mastercraft .bookmark-desktop span {
+    padding-right: 30px !important;
+  }
+  .mastercraft .bookmark-desktop img {
     top: 0;
     left: 0;
+    width: auto;
+    position: absolute;
   }
 }
 
@@ -1134,7 +1171,6 @@ main {
 .about .reward button {
   border: none;
   padding: 5vw;
-  color: white;
   font-weight: 500;
   font-size: 5vw;
   border-radius: 40px;
@@ -1143,6 +1179,10 @@ main {
   width: 66%;
   font-size: 3.5vw;
   font-weight: 700;
+}
+
+.about .reward button:hover {
+  background-color: #147b74;
 }
 
 .about .reward:last-child {

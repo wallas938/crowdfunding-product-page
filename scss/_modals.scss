@@ -18,7 +18,6 @@
 .mobile-nav-modal {
     position: fixed;
     display: none;
-    height: 32%;
     width: 90%;
     background-color: whitesmoke;
     border: 1px solid white;
@@ -101,7 +100,6 @@
             padding-top: 5vw;
             position: relative;
 
-
             &__header {
                 margin-bottom: 9vw;
                 padding-left: 5vw;
@@ -117,6 +115,7 @@
                     position: relative;
                     margin-left: 11vw;
                     margin-bottom: 5vw;
+                    cursor: pointer;
                 }
             }
 
@@ -154,8 +153,6 @@
             }
 
         }
-
-
 
         .pledge-card {
             position: relative;
@@ -255,6 +252,10 @@
                         font-weight: 600;
                         width: 43%;
                         height: 12vw;
+
+                        &:hover {
+                            background-color: $dark-cyan;
+                        }
                     }
                 }
             }
@@ -322,11 +323,25 @@
 
 @media screen and (min-width: $desktop) {
 
+    .background-modal {
+        z-index: 99;
+        display: none;
+        overflow: auto;
+        position: fixed;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: $black, $alpha: .3);
+        padding: 12vw 0;
+    }
+
     .thanks-modal {
         padding: 3vw 2.9vw;
         border: 3px solid lightgrey;
-        top: 29vw;
+        top: 25%;
         width: 41%;
+        transform: translateX(-50%);
 
         .check {
             margin: 0 auto 3vw auto;
@@ -352,7 +367,7 @@
 
     .backing-project-modal {
         width: 55%;
-        border: 3px solid red;
+        border: 3px solid white;
         top: 13vw;
         padding: 3vw;
 
@@ -404,6 +419,7 @@
                     width: 1vw;
                     height: 1vw;
                 }
+                
             }
 
             .no-reward {
@@ -438,6 +454,7 @@
                     border-top: 1px solid lightgray;
                     height: 7vw;
                     padding-right: 1vw;
+
                     p {
                         text-align: center;
                         margin-bottom: 0;
@@ -482,6 +499,8 @@
                     &>div {
                         padding-left: unset;
                         display: flex;
+                        margin-left: unset;
+
                     }
 
                     div>span {
@@ -521,7 +540,6 @@
                 &>.card__footer {
                     display: none;
                     padding-left: 2vw;
-                    display: flex;
                     padding-right: 1vw;
                     padding-top: 1.5vw;
                     padding-bottom: 1.5vw;

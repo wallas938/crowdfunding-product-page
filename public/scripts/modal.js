@@ -1,6 +1,7 @@
 const modalsBackground = document.querySelector('.background-modal');
 const body = document.querySelector('body');
 let currentModal = null;
+let bookmarked = false;
 
 /* Gauge */
 const startingGauge = document.querySelector('.filler');
@@ -14,12 +15,17 @@ const paths = ["images/icon-hamburger.svg", "images/icon-close-menu.svg"];
 
 /** Menu variables */
 
+/* bookmark */
+const bookmarkButton = document.querySelector('.bookmark-desktop');
+/* bookmark */
+
 /* Backproject vairables */
 const openBackProjectModalButton = document.querySelector('.cta__back-this-project');
 const closeBackProjectModalButton = document.querySelector('.close-back-project-btn');
 const backProjectModal = document.querySelector('.backing-project-modal');
 
 const pledgeInputs = document.querySelectorAll('.radio');
+const pledgeNames = document.querySelectorAll('.pledge-name');
 const pledgeFooters = document.querySelectorAll('.card__footer');
 const pledgeValidationButton = document.querySelectorAll('.validation');
 
@@ -34,10 +40,19 @@ const thanksModalButton = document.querySelector('.thanks-modal > div > button')
 
 /** Events */
 
-(function() {
+(function () {
     startingGauge.classList.add('load');
+    console.log(window.screen.width);
 }());
 
+bookmarkButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    bookmarkButton.classList.toggle('bookmarked-class');
+    if (bookmarkButton.classList.contains('bookmarked-class')) {
+        return bookmarkButton.lastElementChild.textContent = 'Bookmarked!';
+    };
+    bookmarkButton.lastElementChild.textContent = 'Bookmark';
+});
 modalsBackground.addEventListener('click', function (e) {
     if (e.target === modalsBackground) {
         currentModal.classList.remove('show');

@@ -1,23 +1,24 @@
 @import "colors";
 
 /* Layout */
-
 $mobile: 375px;
 $desktop: 1440px;
-
 /* Variables */
 
 /* Mixins */
 
-@mixin button($padding) {
+@mixin appButton($padding) {
     border: none;
     padding: $padding;
-    color: white;
     font-weight: 500;
     font-size: 5vw;
     border-radius: 40px;
     letter-spacing: .5px;
     background-color: $moderate-cyan;
+
+    &:hover {
+        background-color: $dark-cyan;
+    }
 }
 
 @mixin card($width) {
@@ -43,4 +44,5 @@ $desktop: 1440px;
     width: 23px;
     height: 23px;
     border-radius: 100%;
+    cursor: pointer;
 }

@@ -45,7 +45,7 @@
 
   button:not(.bookmark-mobile) {
     width: 78%;
-    @include button(5.2vw)
+    @include appButton(5.2vw)
   }
 
   button.bookmark-mobile {
@@ -88,7 +88,7 @@
     }
 
     button:not(.bookmark-desktop) {
-      @include button(1.4vw);
+      @include appButton(1.4vw);
       font-size: 1.1vw;
       width: 31%;
     }
@@ -100,16 +100,19 @@
       font-size: 1.1vw !important;
       font-weight: 700 !important;
       width: 27% !important;
-      color: $dark-gray !important;
+      color: $black;
       background-color: whitesmoke !important;
 
-      &::before {
-        content: url(../images/icon-bookmark.svg);
-        position: absolute;
+      span {
+        padding-right: 30px !important;
+      }
+
+      img {
         top: 0;
         left: 0;
+        width: auto;
+        position: absolute;
       }
     }
-
   }
 }

@@ -58,7 +58,7 @@
         }
 
         button {
-            @include button(5vw);
+            @include appButton(5vw);
             width: 66%;
             font-size: 3.5vw;
             font-weight: 700;
