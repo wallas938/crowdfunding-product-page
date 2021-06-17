@@ -23,6 +23,15 @@
   display: flex !important;
 }
 
+.desk-show-card-footer {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+}
+
 .backdrop-layer {
   height: 100vh;
   overflow-y: hidden;
@@ -48,18 +57,6 @@
 
 .bookmarked-class span {
   color: #147b74 !important;
-}
-
-@media screen and (max-width: 1440px) {
-  .show-flex {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important;
-  }
 }
 
 * {

@@ -87,11 +87,19 @@ pledgeInputs.forEach(input => {
             othersInput.parentElement.parentElement.classList.remove('card-selected-border-class');
         });
         pledgeFooters.forEach(footer => {
-            footer.classList.remove('show-flex');
+            if (window.screen.width < 1440) {
+                footer.classList.remove('show');
+            } else {
+                footer.classList.remove('desk-show-card-footer');
+            }
         });
         e.target.classList.add('pledge-selected');
         e.target.parentElement.parentElement.classList.add('card-selected-border-class');
-        e.target.parentElement.parentElement.lastElementChild.classList.add('show-flex');
+        if (window.screen.width<1440) {
+            e.target.parentElement.parentElement.lastElementChild.classList.add('show');
+        } else {
+            e.target.parentElement.parentElement.lastElementChild.classList.add('desk-show-card-footer');
+        }
     });
 });
 pledgeValidationButton.forEach(button => {

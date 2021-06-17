@@ -15,6 +15,11 @@
     display: flex !important;
 }
 
+.desk-show-card-footer {
+    display: flex !important;
+    align-items: center !important;
+}
+
 .backdrop-layer {
     height: 100vh;
     overflow-y: hidden;
@@ -42,12 +47,5 @@
 .bookmarked-class {
     span {
         color: $dark-cyan !important;
-    }
-}
-
-@media screen and (max-width: $desktop) {
-    .show-flex {    
-        display: flex !important;
-        flex-direction: column !important;
     }
 }
