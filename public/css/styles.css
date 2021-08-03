@@ -111,49 +111,9 @@ select:focus {
 /* Layout */
 /* Variables */
 /* Mixins */
-.background-modal {
-  z-index: 99;
-  display: none;
-  overflow: auto;
-  position: fixed;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 24vw 0;
-}
-
-.mobile-nav-modal {
-  position: fixed;
-  display: none;
-  width: 90%;
-  background-color: whitesmoke;
-  border: 1px solid white;
-  border-radius: 10px;
-  z-index: 100;
-  top: 15vw;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.mobile-nav-modal li {
-  font-size: 5vw;
-  font-weight: 600;
-  padding: 6vw;
-}
-
-.mobile-nav-modal li:not(:last-child) {
-  border-bottom: 1px solid lightgray;
-}
-
 .backing-project-modal {
   width: 90%;
+  max-width: 500px;
   display: none;
   background-color: whitesmoke;
   border: 1px solid white;
@@ -171,11 +131,11 @@ select:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 6vw;
+  margin-bottom: clamp(1.407rem, 6vw, 2.502rem);
 }
 
 .backing-project-modal .backing-project-modal__header h2 {
-  font-size: 5.2vw;
+  font-size: clamp(0.984rem, 5.2vw, 1.75rem);
   padding: auto;
 }
 
@@ -186,9 +146,9 @@ select:focus {
 }
 
 .backing-project-modal p {
-  font-size: 3.5vw;
-  margin-bottom: 6vw;
-  line-height: 6.2vw;
+  font-size: clamp(0.82rem, 3.5vw, 1.214rem);
+  margin-bottom: 1.7em;
+  line-height: 1.77em;
   color: #7a7a7a;
   font-weight: 400;
 }
@@ -217,17 +177,17 @@ select:focus {
 }
 
 .backing-project-modal .backing-project-modal__body .card:not(:last-child) {
-  margin-bottom: 6vw;
+  margin-bottom: clamp(1.407rem, 6vw, 2.502rem);
 }
 
 .backing-project-modal .backing-project-modal__body .no-reward {
-  padding-top: 5vw;
+  padding-top: clamp(1.172rem, 5vw, 2.085rem);
   position: relative;
 }
 
 .backing-project-modal .backing-project-modal__body .no-reward__header {
-  margin-bottom: 9vw;
-  padding-left: 5vw;
+  margin-bottom: clamp(2.11rem, 9vw, 2.2rem);
+  padding-left: clamp(1.172rem, 5vw, 2.0853rem);
 }
 
 .backing-project-modal .backing-project-modal__body .no-reward__header input {
@@ -236,11 +196,11 @@ select:focus {
 }
 
 .backing-project-modal .backing-project-modal__body .no-reward__header label {
-  font-size: 3.5vw;
+  font-size: clamp(0.82rem, 3.5vw, 1.214rem);
   font-weight: 700;
   position: relative;
-  margin-left: 11vw;
-  margin-bottom: 5vw;
+  margin-left: 3.143em;
+  margin-bottom: 1.43em;
   cursor: pointer;
 }
 
@@ -301,7 +261,7 @@ select:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 6vw;
+  margin-bottom: clamp(1.407rem, 6vw, 2.502rem);
   padding-top: 5vw;
   padding-left: 5vw;
 }
@@ -312,7 +272,7 @@ select:focus {
 
 .backing-project-modal .backing-project-modal__body .pledge-card > .card__header div > span {
   display: block;
-  font-size: 3.5vw;
+  font-size: clamp(0.82rem, 3.5vw, 1.214rem);
   font-weight: 700;
 }
 
@@ -343,7 +303,7 @@ select:focus {
 .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer {
   display: none;
   border-top: 1px solid lightgray;
-  padding-top: 6vw;
+  padding-top: clamp(1.407rem, 6vw, 2.502rem);
 }
 
 .backing-project-modal .backing-project-modal__body .pledge-card > .card__footer p {
@@ -415,16 +375,59 @@ select:focus {
   padding-right: 12vw;
 }
 
+.background-modal {
+  z-index: 99;
+  display: none;
+  overflow: auto;
+  position: fixed;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 24vw 0;
+}
+
+.mobile-nav-modal {
+  position: fixed;
+  display: none;
+  width: 90%;
+  max-width: 450px;
+  background-color: whitesmoke;
+  border: 1px solid white;
+  border-radius: 10px;
+  z-index: 100;
+  top: clamp(3.518rem, 15vw, 3.75rem);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.mobile-nav-modal li {
+  font-size: clamp(1.172rem, 5vw, 1.5rem);
+  font-weight: 600;
+  padding: 1.344795em;
+}
+
+.mobile-nav-modal li:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
+
 .thanks-modal {
   position: absolute;
   display: none;
   z-index: 100;
   background-color: #fff;
   text-align: center;
-  padding: 9vw 7vw 10vw 7vw;
+  padding: clamp(2.11rem, 9vw, 2.5rem) clamp(1.641rem, 7vw, 2.918rem) clamp(2.345rem, 10vw, 3.25rem) clamp(1.641rem, 7vw, 2.918rem);
   border-radius: 8px;
   top: 30vw;
   width: 90%;
+  max-width: 28.125rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -436,25 +439,27 @@ select:focus {
 }
 
 .thanks-modal h1 {
-  font-size: 5.3vw;
-  margin-bottom: 7vw;
+  font-size: clamp(1.242rem, 5.3vw, 2rem);
+  margin-bottom: 1.321039em;
 }
 
 .thanks-modal p {
-  font-size: 4vw;
+  font-size: clamp(0.937rem, 4vw, 1.242rem);
   color: #7a7a7a;
   font-weight: 500;
-  line-height: 6.5vw;
-  margin-bottom: 9vw;
+  line-height: 1.625em;
+  margin-bottom: 2.25111em;
 }
 
 .thanks-modal button {
-  width: 40%;
-  height: 14vw;
   border-radius: 50px;
   border: none;
   color: white;
   background-color: #3cb4ac;
+  font-size: clamp(0.82rem, 3.5vw, 1.214rem);
+  font-weight: 600;
+  padding: 1.3em 2.8em;
+  font-family: "Commissioner", sans-serif;
 }
 
 @media screen and (min-width: 1440px) {
@@ -606,7 +611,7 @@ select:focus {
     font-weight: 600;
   }
   .backing-project-modal .backing-project-modal__body .card:not(:last-child) {
-    margin-bottom: 6vw;
+    margin-bottom: clamp(1.407rem, 6vw, 2.502rem);
   }
   .backing-project-modal .backing-project-modal__body .pledge-card {
     position: relative;
@@ -820,6 +825,14 @@ main {
       -ms-flex-align: center;
           align-items: center;
   background-color: whitesmoke;
+  max-width: 34.37rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    max-width: 90rem;
+  }
 }
 
 /* Colors */
@@ -828,20 +841,20 @@ main {
 /* Variables */
 /* Mixins */
 .mastercraft {
-  width: 90%;
   background-color: white;
   border-radius: 8px;
   border: 1px solid white;
   -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
           box-shadow: 0px 0px 1px 1px whitesmoke;
-  margin-bottom: 8vw;
+  margin-bottom: clamp(1.876rem, 8vw, 3.336rem);
+  width: 90%;
   bottom: 8vh;
   margin-bottom: unset;
   position: relative;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 13vw;
-  padding-bottom: 10vw;
+  padding-left: clamp(1.172rem, 5vw, 2.085rem);
+  padding-right: clamp(1.172rem, 5vw, 2.085rem);
+  padding-top: clamp(3.048rem, 13vw, 3.336rem);
+  padding-bottom: clamp(2.345rem, 10vw, 4.17rem);
   text-align: center;
 }
 
@@ -857,17 +870,17 @@ main {
 }
 
 .mastercraft h1 {
-  font-size: 5.9vw;
-  margin-bottom: 6vw;
+  font-size: clamp(1.407rem, 5.9vw, 2rem);
+  margin-bottom: 1em;
 }
 
 .mastercraft p {
   color: #7a7a7a;
   font-weight: 500;
-  font-size: 3.9vw;
-  line-height: 7vw;
+  font-size: clamp(0.914rem, 3.9vw, 1, 399rem);
+  line-height: 1.642em;
   font-weight: 500;
-  margin-bottom: 8vw;
+  margin-bottom: 1.876em;
 }
 
 .mastercraft .cta {
@@ -889,12 +902,13 @@ main {
 .mastercraft button:not(.bookmark-mobile) {
   width: 78%;
   border: none;
-  padding: 5.2vw;
-  font-weight: 500;
-  font-size: 5vw;
+  font-weight: 600;
   border-radius: 40px;
   letter-spacing: .5px;
   background-color: #3cb4ac;
+  font-family: "Commissioner", sans-serif;
+  font-size: clamp(0.937rem, 4vw, 1.33rem);
+  padding: 1.3em 1.04em;
 }
 
 .mastercraft button:not(.bookmark-mobile):hover {
@@ -904,6 +918,7 @@ main {
 .mastercraft button.bookmark-mobile {
   border: none;
   border-radius: 100%;
+  width: clamp(3.518rem, 15vw, 5.004rem);
 }
 
 @media screen and (min-width: 1440px) {
@@ -935,12 +950,11 @@ main {
   }
   .mastercraft button:not(.bookmark-desktop) {
     border: none;
-    padding: 1.4vw;
-    font-weight: 500;
-    font-size: 5vw;
+    font-weight: 600;
     border-radius: 40px;
     letter-spacing: .5px;
     background-color: #3cb4ac;
+    font-family: "Commissioner", sans-serif;
     font-size: 1.1vw;
     width: 31%;
   }
@@ -974,18 +988,18 @@ main {
 /* Variables */
 /* Mixins */
 .stats {
-  width: 90%;
   background-color: white;
   border-radius: 8px;
   border: 1px solid white;
   -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
           box-shadow: 0px 0px 1px 1px whitesmoke;
-  margin-bottom: 8vw;
+  margin-bottom: clamp(1.876rem, 8vw, 3.336rem);
+  width: 100%;
   text-align: center;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 10vw;
-  padding-bottom: 10vw;
+  padding-left: clamp(1.172rem, 5vw, 2.085rem);
+  padding-right: clamp(1.172rem, 5vw, 2.085rem);
+  padding-top: clamp(2.345rem, 10vw, 4.17rem);
+  padding-bottom: clamp(2.345rem, 10vw, 4.17rem);
 }
 
 .stats .container {
@@ -1007,22 +1021,22 @@ main {
 }
 
 .stats .container span:nth-child(1) {
-  font-size: 10vw;
+  font-size: clamp(2.345rem, 10vw, 4.17rem);
   color: black;
   font-weight: 700;
-  margin-bottom: 2.5vw;
+  margin-bottom: 0.25em;
 }
 
 .stats .container span:nth-child(2) {
   color: #7a7a7a;
-  margin-bottom: 7vw;
+  margin-bottom: 1.641em;
   font-weight: 500;
 }
 
 .stats .loading-bar {
   width: 100%;
   background-color: lightgrey;
-  height: 4vw;
+  height: clamp(0.937rem, 4vw, 1.25rem);
   border-radius: 40px;
   position: relative;
 }
@@ -1032,7 +1046,7 @@ main {
   position: absolute;
   left: 0;
   background-color: #3cb4ac;
-  height: 4vw;
+  height: clamp(0.937rem, 4vw, 1.25rem);
   border-radius: 40px;
   -webkit-transition: width 600ms ease-in;
   transition: width 600ms ease-in;
@@ -1097,70 +1111,68 @@ main {
 }
 
 .about {
-  width: 90%;
   background-color: white;
   border-radius: 8px;
   border: 1px solid white;
   -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
           box-shadow: 0px 0px 1px 1px whitesmoke;
-  margin-bottom: 8vw;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 10vw;
-  padding-bottom: 10vw;
+  margin-bottom: clamp(1.876rem, 8vw, 3.336rem);
+  padding-left: clamp(1.172rem, 5vw, 2.085rem);
+  padding-right: clamp(1.172rem, 5vw, 2.085rem);
+  padding-top: clamp(2.345rem, 10vw, 4.17rem);
+  padding-bottom: clamp(2.345rem, 10vw, 4.17rem);
 }
 
 .about h2 {
-  font-size: 5.7vw;
-  margin-bottom: 8vw;
+  font-size: clamp(1.336rem, 5.7vw, 1.405rem);
+  margin-bottom: 1.404em;
 }
 
 .about p {
   color: #7a7a7a;
   font-weight: 500;
-  font-size: 3.9vw;
-  line-height: 7vw;
+  font-size: clamp(0.914rem, 3.9vw, 1, 399rem);
+  line-height: 1.642em;
   font-weight: 500;
 }
 
 .about > p {
-  margin-bottom: 8vw;
+  margin-bottom: 1.876em;
 }
 
 .about .reward {
-  width: 90%;
   background-color: white;
   border-radius: 8px;
   border: 1px solid white;
   -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
           box-shadow: 0px 0px 1px 1px whitesmoke;
-  margin-bottom: 8vw;
+  margin-bottom: clamp(1.876rem, 8vw, 3.336rem);
   border: 1px solid lightgray;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 10vw;
+  padding-left: clamp(1.407rem, 6vw, 2.502rem);
+  padding-right: clamp(2.814rem, 12vw, 3.336rem);
+  padding-top: clamp(1.641rem, 7vw, 2.918rem);
   padding-bottom: 10vw;
   margin-bottom: 15vw;
 }
 
 .about .reward h3 {
   margin-bottom: 1vw;
-  font-size: 4.5vw;
+  font-size: clamp(1.055rem, 4.5vw, 1.335rem);
 }
 
 .about .reward > p {
-  margin-bottom: 8vw;
+  margin-bottom: 1.876em;
 }
 
 .about .reward .pledge {
   font-weight: 500;
   color: #3cb4ac;
-  font-size: 4.5vw;
-  margin-bottom: 5vw;
+  font-size: clamp(1.055rem, 4.5vw, 1.335rem);
+  margin-bottom: 1.05232em;
 }
 
 .about .reward .left {
-  font-size: 5vw;
+  font-size: clamp(1.172rem, 5vw, 1.303rem);
   margin-bottom: 10vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1171,7 +1183,7 @@ main {
 }
 
 .about .reward .left :first-child {
-  font-size: 10vw;
+  font-size: clamp(2.345rem, 10vw, 5.214rem);
   font-weight: 700;
   color: black;
   margin-right: 2vw;
@@ -1179,14 +1191,14 @@ main {
 
 .about .reward button {
   border: none;
-  padding: 5vw;
-  font-weight: 500;
-  font-size: 5vw;
+  font-weight: 600;
   border-radius: 40px;
   letter-spacing: .5px;
   background-color: #3cb4ac;
+  font-family: "Commissioner", sans-serif;
   width: 66%;
-  font-size: 3.5vw;
+  padding: 1.2em 1em;
+  font-size: clamp(0.937rem, 4vw, 1.054rem);
   font-weight: 700;
 }
 
@@ -1222,13 +1234,12 @@ main {
     margin-bottom: 2vw;
   }
   .about .reward {
-    width: 100%;
     background-color: white;
     border-radius: 8px;
     border: 1px solid white;
     -webkit-box-shadow: 0px 0px 1px 1px whitesmoke;
             box-shadow: 0px 0px 1px 1px whitesmoke;
-    margin-bottom: 8vw;
+    margin-bottom: clamp(1.876rem, 8vw, 3.336rem);
     border: 2px solid whitesmoke !important;
     padding: 2vw;
     margin-right: auto;

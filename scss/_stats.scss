@@ -2,12 +2,13 @@
 @import "variables";
 
 .stats {
-    @include card(90%);
+    @include card;
+    width: 100%;
     text-align: center;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-top: 10vw;
-    padding-bottom: 10vw;
+    padding-left: clamp(1.172rem, 5vw, 2.085rem);
+    padding-right: clamp(1.172rem, 5vw, 2.085rem);
+    padding-top: clamp(2.345rem, 10vw, 4.170rem);
+    padding-bottom: clamp(2.345rem, 10vw, 4.170rem);
 
     .container {
         display: flex;
@@ -22,15 +23,15 @@
         }
 
         span:nth-child(1) {
-            font-size: 10vw;
+            font-size: clamp(2.345rem, 10vw, 4.17rem);
             color: $black;
             font-weight: 700;
-            margin-bottom: 2.5vw;
+            margin-bottom: 0.25em; // 9.38333px
         }
 
         span:nth-child(2) {
             color: $dark-gray;
-            margin-bottom: 7vw;
+            margin-bottom: 1.641em;
             font-weight: 500;
         }
     }
@@ -38,7 +39,7 @@
     .loading-bar {
         width: 100%;
         background-color: lightgrey;
-        height: 4vw;
+        height: clamp(0.937rem, 4vw, 1.25rem); //15px
         border-radius: 40px;
         position: relative;
 
@@ -47,7 +48,7 @@
             position: absolute;
             left: 0;
             background-color: $moderate-cyan;
-            height: 4vw;
+            height: clamp(0.937rem, 4vw, 1.25rem);
             border-radius: 40px;
             transition: width 600ms ease-in;
         }

@@ -1,45 +1,9 @@
 @import "colors";
 @import "variables";
 
-.background-modal {
-    z-index: 99;
-    display: none;
-    overflow: auto;
-    position: fixed;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    height: 100%;
-    background-color: rgba($color: $black, $alpha: .3);
-    padding: 24vw 0;
-
-}
-
-.mobile-nav-modal {
-    position: fixed;
-    display: none;
-    width: 90%;
-    background-color: whitesmoke;
-    border: 1px solid white;
-    border-radius: 10px;
-    z-index: 100;
-    top: 15vw;
-    left: 50%;
-    transform: translateX(-50%);
-
-    li {
-        font-size: 5vw;
-        font-weight: 600;
-        padding: 6vw;
-    }
-
-    li:not(:last-child) {
-        border-bottom: 1px solid lightgray;
-    }
-}
-
 .backing-project-modal {
     width: 90%;
+    max-width: 500px;
     display: none;
     background-color: whitesmoke;
     border: 1px solid white;
@@ -50,10 +14,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 6vw;
+        margin-bottom: clamp(1.407rem, 6vw, 2.502rem);
 
         h2 {
-            font-size: 5.2vw;
+            font-size: clamp(0.984rem, 5.2vw, 1.75rem);
             padding: auto;
         }
 
@@ -65,9 +29,9 @@
     }
 
     p {
-        font-size: 3.5vw;
-        margin-bottom: 6vw;
-        line-height: 6.2vw;
+        font-size: clamp(0.820rem, 3.5vw, 1.214rem); //1,48
+        margin-bottom: 1.7em; // 
+        line-height: 1.77em; // 23.26
         color: $dark-gray;
         font-weight: 400;
     }
@@ -93,16 +57,17 @@
         }
 
         .card:not(:last-child) {
-            margin-bottom: 6vw;
+            margin-bottom: clamp(1.407rem, 6vw, 2.502rem);
         }
 
         .no-reward {
-            padding-top: 5vw;
+            padding-top: clamp(1.172rem, 5vw, 2.085rem);
             position: relative;
 
             &__header {
-                margin-bottom: 9vw;
-                padding-left: 5vw;
+                ////// ICI ///////
+                margin-bottom: clamp(2.110rem, 9vw, 2.2rem);
+                padding-left: clamp(1.172rem, 5vw, 2.0853rem);
 
                 input {
                     margin-right: 2.5vw;
@@ -110,11 +75,11 @@
                 }
 
                 label {
-                    font-size: 3.5vw;
+                    font-size: clamp(0.820rem, 3.5vw, 1.214rem);
                     font-weight: 700;
                     position: relative;
-                    margin-left: 11vw;
-                    margin-bottom: 5vw;
+                    margin-left: 3.143em; //41, 2833
+                    margin-bottom: 1.43em; // 18.7667
                     cursor: pointer;
                 }
             }
@@ -164,7 +129,7 @@
 
             &>.card__header {
                 display: flex;
-                margin-bottom: 6vw;
+                margin-bottom: clamp(1.407rem, 6vw, 2.502rem);
                 padding-top: 5vw;
                 padding-left: 5vw;
 
@@ -174,7 +139,7 @@
 
                 div>span {
                     display: block;
-                    font-size: 3.5vw;
+                    font-size: clamp(0.82rem, 3.5vw, 1.214rem);
                     font-weight: 700;
                 }
 
@@ -206,7 +171,7 @@
             &>.card__footer {
                 display: none;
                 border-top: 1px solid lightgray;
-                padding-top: 6vw;
+                padding-top: clamp(1.407rem, 6vw, 2.502rem);
 
                 p {
                     text-align: center;
@@ -279,16 +244,59 @@
     }
 }
 
+.background-modal {
+    z-index: 99;
+    display: none;
+    overflow: auto;
+    position: fixed;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $black, $alpha: .3);
+    padding: 24vw 0;
+
+}
+
+.mobile-nav-modal {
+    position: fixed;
+    display: none;
+    width: 90%;
+    max-width: 450px;
+    background-color: whitesmoke;
+    border: 1px solid white;
+    border-radius: 10px;
+    z-index: 100;
+    top: clamp(3.518rem, 15vw, 3.75rem);
+    left: 50%;
+    transform: translateX(-50%);
+
+    li {
+        font-size: clamp(1.172rem, 5vw, 1.5rem);
+        font-weight: 600;
+        padding: 1.344795em; // 22.5167
+    }
+
+    li:not(:last-child) {
+        border-bottom: 1px solid lightgray;
+    }
+}
+
+
 .thanks-modal {
     position: absolute;
     display: none;
     z-index: 100;
     background-color: #fff;
     text-align: center;
-    padding: 9vw 7vw 10vw 7vw;
+    padding: clamp(2.110rem, 9vw, 2.5rem) 
+        clamp(1.641rem, 7vw, 2.918rem) 
+        clamp(2.345rem, 10vw, 3.25rem) 
+        clamp(1.641rem, 7vw, 2.918rem);
     border-radius: 8px;
     top: 30vw;
     width: 90%;
+    max-width: 28.125rem;
     left: 50%;
     transform: translateX(-50%);
 
@@ -298,25 +306,27 @@
     }
 
     h1 {
-        font-size: 5.3vw;
-        margin-bottom: 7vw;
+        font-size: clamp(1.242rem, 5.3vw, 2rem);
+        margin-bottom: 1.321039em; // 26.2667
     }
 
     p {
-        font-size: 4vw;
+        font-size: clamp(0.937rem, 4vw, 1.242rem); // 1,325
         color: $dark-gray;
         font-weight: 500;
-        line-height: 6.5vw;
-        margin-bottom: 9vw;
+        line-height: 1.625em; // 24.3833
+        margin-bottom: 2.25111em; // 33.7667
     }
 
     button {
-        width: 40%;
-        height: 14vw;
         border-radius: 50px;
         border: none;
         color: white;
         background-color: $moderate-cyan;
+        font-size: clamp(0.820rem, 3.5vw, 1.214rem);
+        font-weight: 600;
+        padding: 1.3em 2.8em;
+        font-family: $commissioner;
     }
 }
 
@@ -419,7 +429,7 @@
                     width: 1vw;
                     height: 1vw;
                 }
-                
+
             }
 
             .no-reward {
@@ -477,7 +487,7 @@
             }
 
             .card:not(:last-child) {
-                margin-bottom: 6vw;
+                margin-bottom: clamp(1.407rem, 6vw, 2.502rem);
             }
 
             .pledge-card {

@@ -7,34 +7,32 @@ $desktop: 1440px;
 
 /* Mixins */
 
-@mixin appButton($padding) {
+@mixin appButton {
     border: none;
-    padding: $padding;
-    font-weight: 500;
-    font-size: 5vw;
+    font-weight: 600;
     border-radius: 40px;
     letter-spacing: .5px;
     background-color: $moderate-cyan;
+    font-family: $commissioner;
 
     &:hover {
         background-color: $dark-cyan;
     }
 }
 
-@mixin card($width) {
-    width: $width;
+@mixin card {
     background-color: white;
     border-radius: 8px;
     border: 1px solid white;
     box-shadow: 0px 0px 1px 1px whitesmoke;
-    margin-bottom: 8vw;
+    margin-bottom: clamp(1.876rem, 8vw, 3.336rem);
 }
 
 @mixin paragraph {
     color: $dark-gray;
     font-weight: 500;
-    font-size: 3.9vw;
-    line-height: 7vw;
+    font-size: clamp(0.914rem, 3.9vw, 1,399rem);
+    line-height: 1.642em; // 26.2667px
     font-weight: 500;
 }
 

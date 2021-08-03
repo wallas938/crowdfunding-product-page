@@ -3,4 +3,12 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: whitesmoke;
+    max-width: 34.37rem; //550px
+    margin: 0 auto;
+}
+
+@media screen and (min-width: $desktop) {
+    main {
+        max-width: 90rem; // 1440px
+    }
 }

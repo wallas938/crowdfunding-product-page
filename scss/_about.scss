@@ -1,13 +1,13 @@
 .about {
-    @include card(90%);
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-top: 10vw;
-    padding-bottom: 10vw;
+    @include card;
+    padding-left: clamp(1.172rem, 5vw, 2.085rem);
+    padding-right: clamp(1.172rem, 5vw, 2.085rem);
+    padding-top: clamp(2.345rem, 10vw, 4.170rem);
+    padding-bottom: clamp(2.345rem, 10vw, 4.170rem);
 
     h2 {
-        font-size: 5.7vw;
-        margin-bottom: 8vw;
+        font-size: clamp(1.336rem, 5.7vw, 1.405rem);  
+        margin-bottom: 1.404em;
     }
 
     p {
@@ -15,52 +15,54 @@
     }
 
     >p {
-        margin-bottom: 8vw
+        margin-bottom: 1.876em;
     }
 
     .reward {
-        @include card(90%);
+        @include card;
         border: 1px solid lightgray;
-        padding-left: 5vw;
-        padding-right: 5vw;
-        padding-top: 10vw;
+        padding-left: clamp(1.407rem, 6vw, 2.502rem);
+        padding-right: clamp(2.814rem, 12vw, 3.336rem);
+        padding-top: clamp(1.641rem, 7vw, 2.918rem);
         padding-bottom: 10vw;
         margin-bottom: 15vw;
 
         h3 {
             margin-bottom: 1vw;
-            font-size: 4.5vw;
+            font-size: clamp(1.055rem, 4.5vw, 1.335rem); // ratio 1,266
         }
 
         >p {
-            margin-bottom: 8vw;
+            margin-bottom: 1.876em;
         }
 
         .pledge {
             font-weight: 500;
             color: $moderate-cyan;
-            font-size: 4.5vw;
-            margin-bottom: 5vw;
+            font-size: clamp(1.055rem, 4.5vw, 1.335rem);
+            margin-bottom: 1.05232em; //18.7667px 
         }
 
         .left {
-            font-size: 5vw;
+            font-size: clamp(1.172rem, 5vw, 1.303rem); //1,99
             margin-bottom: 10vw;
             display: flex;
             align-items: center;
 
             :first-child {
-                font-size: 10vw;
+                font-size: clamp(2.345rem, 10vw, 5.214rem);
                 font-weight: 700;
                 color: $black;
                 margin-right: 2vw;
             }
         }
 
+        /////// Bouton a revoir !!! ///////
         button {
-            @include appButton(5vw);
+            @include appButton;
             width: 66%;
-            font-size: 3.5vw;
+            padding: 1.2em 1em;
+            font-size: clamp(0.937rem, 4vw, 1.054rem); 
             font-weight: 700;
         }
     }
@@ -96,7 +98,7 @@
         }
 
         .reward {
-            @include card(100%);
+            @include card;
             border: 2px solid whitesmoke !important;
             padding: 2vw;
             margin-right: auto;

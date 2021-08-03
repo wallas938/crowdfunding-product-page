@@ -2,14 +2,15 @@
 @import "variables";
 
 .mastercraft {
-  @include card(90%);
+  @include card; // ajouter width
+  width: 90%;
   bottom: 8vh;
   margin-bottom: unset;
   position: relative;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 13vw;
-  padding-bottom: 10vw;
+  padding-left: clamp(1.172rem, 5vw, 2.085rem);
+  padding-right: clamp(1.172rem, 5vw, 2.085rem);
+  padding-top: clamp(3.048rem, 13vw, 3.336rem);
+  padding-bottom: clamp(2.345rem, 10vw, 4.170rem);
   text-align: center;
 
   button.bookmark-desktop {
@@ -24,13 +25,13 @@
   }
 
   h1 {
-    font-size: 5.9vw;
-    margin-bottom: 6vw;
+    font-size: clamp(1.407rem, 5.9vw, 2rem);
+    margin-bottom: 1em;
   }
 
   p {
     @include paragraph;
-    margin-bottom: 8vw;
+    margin-bottom: 1.876em; // 30.0167px 
   }
 
   .cta {
@@ -45,12 +46,15 @@
 
   button:not(.bookmark-mobile) {
     width: 78%;
-    @include appButton(5.2vw)
+    @include appButton;
+    font-size: clamp(0.937rem, 4vw, 1.33rem);
+    padding: 1.3em 1.04em; // 19.5167 px
   }
 
   button.bookmark-mobile {
     border: none;
     border-radius: 100%;
+    width: clamp(3.518rem, 15vw, 5.004rem);
   }
 
 }
@@ -88,7 +92,7 @@
     }
 
     button:not(.bookmark-desktop) {
-      @include appButton(1.4vw);
+      @include appButton;
       font-size: 1.1vw;
       width: 31%;
     }
