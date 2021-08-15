@@ -239,8 +239,7 @@ select:focus {
   background-color: #3cb4ac;
   color: white;
   font-weight: 600;
-  width: 43%;
-  height: 12vw;
+  padding: 1em;
 }
 
 .backing-project-modal .backing-project-modal__body .pledge-card {
@@ -501,14 +500,15 @@ select:focus {
     margin-bottom: 2vw;
   }
   .thanks-modal button {
-    width: 23%;
-    height: 4vw;
+    /*  width: 23%;
+            height: 4vw; */
   }
   .backing-project-modal {
     width: 55%;
     border: 3px solid white;
     top: 13vw;
     padding: 3vw;
+    max-width: 1280px;
   }
   .backing-project-modal .backing-project-modal__header {
     display: -webkit-box;
@@ -551,8 +551,8 @@ select:focus {
     height: 23px;
     border-radius: 100%;
     cursor: pointer;
-    width: 2vw;
-    height: 2vw;
+    width: 23px;
+    height: 23px;
     left: 2vw;
     top: 2.2vw;
   }
@@ -571,10 +571,10 @@ select:focus {
     margin-right: 2.5vw;
   }
   .backing-project-modal .backing-project-modal__body .no-reward__header label {
-    font-size: 1.3vw;
+    font-size: clamp(1.169rem, 1.3vw, 1.375rem);
     font-weight: 700;
+    margin-left: 2.15em;
     position: relative;
-    margin-left: unset;
     margin-bottom: unset;
   }
   .backing-project-modal .backing-project-modal__body .no-reward__body {
@@ -865,8 +865,8 @@ main {
 .mastercraft::before {
   content: url(../images/logo-mastercraft.svg);
   position: absolute;
-  top: -7vw;
-  left: 38vw;
+  top: -11%;
+  left: 44%;
 }
 
 .mastercraft h1 {
@@ -936,8 +936,8 @@ main {
   .mastercraft::before {
     content: url(../images/logo-mastercraft.svg);
     position: absolute;
-    top: -2vw;
-    left: 25.5vw;
+    top: -10%;
+    left: 46%;
   }
   .mastercraft h1 {
     font-size: 2.3vw;
